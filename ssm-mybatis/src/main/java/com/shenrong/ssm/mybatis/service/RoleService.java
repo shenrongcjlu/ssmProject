@@ -14,13 +14,18 @@ public class RoleService {
 
     public static void main(String[] args) {
         Role role = new Role();
-        role.setId(1);
+        role.setId(2);
         role.setRoleName("shenrong");
         role.setNote("man");
 
         SqlSession session = SqlSessionFactoryUtils.openSession();
-        RoleMapper roleMapper = session.getMapper("");
+        RoleMapper roleMapper = session.getMapper(RoleMapper.class);
 
+        roleMapper.insertRole(role);
+
+        session.commit();
     }
+
+
 
 }
