@@ -22,6 +22,5 @@
     </environments>
 
     <mappers>
-        <mapper resource="com/shenrong/ssm/mybatis/dao/mapper/roleMapper.xml"/>
     </mappers>
 </configuration>
