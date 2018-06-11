@@ -1,15 +1,9 @@
 package com.shenrong.ssm.mybatis.main;
 
-import com.shenrong.ssm.mybatis.dao.RoleMapper;
-import com.shenrong.ssm.mybatis.entity.Role;
-import org.apache.ibatis.io.Resources;
+import com.shenrong.ssm.mybatis.dao.EmployeeMapper;
+import com.shenrong.ssm.mybatis.entity.Employee;
+import com.shenrong.ssm.mybatis.utils.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.apache.ibatis.type.ByteTypeHandler;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * @Deacription:
@@ -18,25 +12,9 @@ import java.io.InputStream;
  */
 public class MybatisTest {
     public static void main(String[] args) {
-        InputStream in;
-        try {
-            in = Resources.getResourceAsStream("mybatis-config.xml");
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
+        SqlSession sqlSession = SqlSessionFactoryUtils.openSession();
+        EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+        Employee employee = mapper.getEmployee(1L);
 
-            Role role = new Role();
-            role.setId(1);
-            role.setRoleName("shenrong");
-            role.setNote("man");
-
-            SqlSession session = sqlSessionFactory.openSession();
-
-            RoleMapper roleMapper = session.getMapper(RoleMapper.class);
-            roleMapper.insertRole(role);
-
-            session.commit();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

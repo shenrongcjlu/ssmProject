@@ -1,6 +1,5 @@
 package com.shenrong.ssm.mybatis.utils;
 
-import jdk.internal.util.xml.impl.Input;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,8 +7,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.locks.Lock;
-import java.util.logging.Logger;
 
 /**
  * @Deacription:
