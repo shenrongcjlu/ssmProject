@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="learn-database" />
+        <module name="learn-sm" />
         <module name="learn-spring" />
         <module name="learnaop" />
         <module name="ssm-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="learn-database" target="1.5" />
       <module name="learn-parent" target="1.5" />
+      <module name="learn-sm" target="1.5" />
       <module name="learn-spring" target="1.5" />
       <module name="learnaop" target="1.5" />
       <module name="ssm-mybatis" target="1.5" />

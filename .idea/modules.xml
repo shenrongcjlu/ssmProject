@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../learnparent/learn-database/learn-database.iml" filepath="$PROJECT_DIR$/../learnparent/learn-database/learn-database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-parent/learn-parent.iml" filepath="$PROJECT_DIR$/learn-parent/learn-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../learnparent/learn-sm/learn-sm.iml" filepath="$PROJECT_DIR$/../learnparent/learn-sm/learn-sm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../learnparent/learn-spring/learn-spring.iml" filepath="$PROJECT_DIR$/../learnparent/learn-spring/learn-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../learnparent/learn-aop/learnaop.iml" filepath="$PROJECT_DIR$/../learnparent/learn-aop/learnaop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-mybatis/ssm-mybatis.iml" filepath="$PROJECT_DIR$/ssm-mybatis/ssm-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-parent.iml" filepath="$PROJECT_DIR$/ssm-parent.iml" />
+    </modules>
+  </component>
+</project>

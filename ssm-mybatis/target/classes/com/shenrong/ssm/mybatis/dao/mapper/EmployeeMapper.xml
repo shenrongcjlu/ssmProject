@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shenrong.ssm.mybatis.dao.EmployeeMapper">
+
+    <resultMap id="employee" type="employee">
+        <id column="id" property="id"/>
+        <result column="real_name" property="realName"/>
+        <result column="sex" property="sex" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result column="birthday" property="birthday"/>
+        <result column="position" property="position"/>
+        <result column="note" property="note"/>
+        <association property="workCard" column="id"
+                     select="com.shenrong.ssm.mybatis.dao.mapper.WorkCardMapper.getWorkCard"/>
+        <collection property="employeeTaskList" column="id"
+                    select="com.shenrong.ssm.mybatis.dao.EmployeeTaskMapper.getEmployeeTaskByEmpId"/>
+        <discriminator javaType="long" column="sex">
+            <case value="1" resultMap="maleHealthMapper"></case>
+            <case value="2" resultMap="femaleHealthMapper"></case>
+        </discriminator>
+    </resultMap>
+
+    <resultMap id="maleHealthMapper" type="maleEmployee" extends="employee">
+        <association property="maleHeamaleHealthEmployeelthForm" column="id"
+                     select="com.shenrong.ssm.mybatis.dao.mapper.MaleHealthFormMapper.getMaleHealthForm"/>
+    </resultMap>
+
+    <resultMap id="femaleHealthMapper" type="femaleEmployee" extends="employee">
+        <association property="femaleHealthForm" column="id"
+                     select="com.shenrong.ssm.mybatis.dao.mapper.FemaleHealthFormMapper.getFemaleHealthForm"/>
+    </resultMap>
+
+    <select id="getEmployee" parameterType="long" resultMap="employee">
+        select * from t_employee where id = #{id}
+    </select>
+</mapper>
